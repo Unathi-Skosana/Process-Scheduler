@@ -1,0 +1,25 @@
+Processes P1 P2 P3 P4 P5 P6
+Resources R1 R2
+Mailboxes M1 M2 M3 M4 M5
+
+Process P1
+ req R1
+ rel R1
+ send (M1, Lol this is a message)
+ req R2
+ rel R2
+
+Process P2
+ req R1
+ req R2
+ rel R1
+ recv (M1, message)
+ rel R2
+
+Process P3
+ req R1
+ send (M2, LOLcats)
+ req R2
+ rel R1
+ rel R2
+ recv (M5, lollies)
